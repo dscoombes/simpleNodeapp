@@ -19,7 +19,7 @@ n=n+4
 };
 
 
-console.log("Pi calculated")
+console.log("Pi calculated");
 
 //Random number
 var rnumber=Math.floor(Math.random()*10) + 1;
