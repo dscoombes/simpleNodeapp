@@ -29,15 +29,15 @@ var rnumber=Math.floor(Math.random()*10) + 1;
 if (rnumber<2)
 {
     console.error("Error message from index.js, Illegal operation", rnumber);
-    response.write(rnumber);} //Illegal operation
-    response.end();
+    response.write(rnumber); //Illegal operation
+    response.end();}
 else
 {
-    response.write("<br/>Call for today's special offers!");}
+    response.write("<br/>Call for today's special offers!");
     response.end();
     console.log("Information message #2 from index.js");
 
-});
+}
 
 var port = process.env.PORT || 1337;
 server.listen(port);
