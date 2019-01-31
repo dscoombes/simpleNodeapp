@@ -14,7 +14,7 @@ response.end();
 });
                                
 let getOrderQueue = function() {  
-    return Math.round(12 * Math.random());
+    return Math.round(10 * Math.random());
 };
 
 setInterval(function() {  
@@ -26,7 +26,7 @@ setInterval(function() {
         console.log('Information message: Order queue is empty!');
     }
 
-    if (orderQueue > 8) {
+    if (orderQueue > 5) {
         return console.error('Error message: Too many orders in queue. Current unprocessed orders: ',orderQueue);
     }
 }, 3000);
