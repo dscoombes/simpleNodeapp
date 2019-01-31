@@ -13,29 +13,23 @@ response.write('<!DOCTYPE html><html lang="en"> <head> <meta charset="utf-8"> <t
 response.end();
 });
                                
-//Pi calculation - to slow processing down a bit
-var c=10000000;
-var Pi=0;
-var n=1;
-for (i=0;i<=c;i++)
-{
-Pi=Pi+(4/n)-(4/(n+2))
-n=n+4
-}
+let getOrderQueue = function() {  
+    return Math.round(12 * Math.random());
+};
 
+setInterval(function() {  
+    let orderQueue = getOrderQueue();
 
-console.log("Information message #1 from index.js");
+    console.log(`Information message: There are currently ${orderQueue} orders being processed.`);
 
-//Random number
-var rnumber=Math.floor(Math.random()*10) + 1;
-if (rnumber<2)
-{
-    console.error("Error message from index.js, Illegal operation", rnumber);
-}
-else
-{
-    console.log("Information message #2 from index.js");
-}
+    if (orderQueue === 0) {
+        console.log('Information message: Order queue is empty!');
+    }
+
+    if (orderQueue > 8) {
+        return console.error('Error message: Too many orders in queue. Current unprocessed orders: ',orderQueue);
+    }
+}, 3000);
 
 var port = process.env.PORT || 1337;
 server.listen(port);
